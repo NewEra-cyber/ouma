@@ -13,7 +13,7 @@ const AdminPage = () => {
     setLoading(true);
     setError('');
     try {
-      const res = await fetch('http://localhost:5000/api/leads', {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/leads`, {
         headers: { 'x-admin-password': pwd },
       });
       if (!res.ok) throw new Error('Invalid password');
