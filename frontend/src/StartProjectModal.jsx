@@ -53,7 +53,7 @@ const StartProjectModal = ({ isOpen, onClose, initialProjectType = null }) => {
     e.preventDefault();
     setLoading(true);
     try {
-      await fetch('http://localhost:5000/api/leads', {
+      await fetch(`${process.env.REACT_APP_API_URL}/api/leads`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
